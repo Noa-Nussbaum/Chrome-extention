@@ -3,23 +3,45 @@ body {
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+html, body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    background-color: lightblue;
+  }
 input {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    color: #5f9341;
+    color: #7b7bfa;
     margin: 4px;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
 button{
     color: white;
-    background-color: #5f9341;
+    background-color: #CCCCFF;
     font-weight: bold;
-    border: none;
+    border: 2px solid white;
     padding:10px 20px;
     border-radius: 5px;
-    min-width: 400px;
+    min-width: 200px;
+}
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center; /* Optional: centers buttons */
+    flex-wrap: wrap; /* Prevents overflow on small screens */
+}
+#delete-btn{
+    background-color: white;
+    color: #CCCCFF;
+    flex-wrap: wrap; 
 }
 ul{
     list-style-type: none;
@@ -32,9 +54,12 @@ li{
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-}
-a{
-    text-decoration: none;
-    color: #5f9341;
+    color: #a3a3fa;
     font-weight: bold;
 }
+
+p{
+    font-weight: bold;
+    color:white;
+}
+

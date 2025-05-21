@@ -1,12 +1,18 @@
 <head>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <input type="text" id="expense-el" value="Expense location" onfocus="this.value = '' "/>
-    <input type="number" id="amount-el" value="0" onfocus="this.value=''"/>
-    <button id="expense-btn">SAVE EXPENSE</button>  
+    <input type="text" id="expense-el" placeholder="Expense location"/>
+    <input type="number" id="amount-el" placeholder="0"/>
+
+    <div class="button-group">
+        <button id="expense-btn">SAVE EXPENSE</button>  
+        <button id="delete-btn">DELETE ALL</button>
+        <p id="total-el">TOTAL: $0</p>
+    </div>
+
     <ul id="expense-ul-el"> </ul>
-    <ul id="amount-ul-el"> </ul>
+
     <script src="index.js"></script>
 </body>
-</html>
