@@ -6,15 +6,19 @@ const expenseUlEl = document.getElementById("expense-ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 
 let expenseList = []
+let total = 0
 
 const totalEl = document.getElementById("total-el")
-let total = 0
+
 
 // Get existing list / start new one
 const expenseListStorage = JSON.parse(localStorage.getItem("MyExpenses"));
 
 if(Array.isArray(expenseListStorage) && expenseListStorage.every(e => e !== null)){
     expenseList = expenseListStorage
+    expenseList.forEach((item) => {
+        total += parseFloat(item.value) || 0
+    });
     render(expenseList)
 }
 
@@ -26,13 +30,11 @@ function render(leads) {
 
     leads.forEach((item) => {
         const li = document.createElement("li");
-        li.textContent = `${item.name} : $${item.value}`;
+        li.textContent = `${item.name}: $${item.value} | ${item.date}`;
         expenseUlEl.appendChild(li);
     });
 
     totalEl.innerHTML = `TOTAL: $${total}`
-    // totalEl.innerHTML = "hello"
-    console.log(total)
 }
 
 // Delete all we have so far
@@ -44,14 +46,21 @@ deleteBtn.addEventListener("dblclick", function(){
 
     expenseEl.value = ""
     amountEl.value = ""
-    // window.resizeTo(document.body.scrollWidth, document.body.scrollHeight);
 
     total = 0
+    render(expenseList)
 
 })
 
 // Save the input
 saveBtn.addEventListener("click", function(){
+
+
+    const today = new Date();
+    const formatted = today.toISOString().split('T')[0];
+
+    console.log(formatted)
+
     // Retrieve value
     let expense = expenseEl.value
     let amount = parseFloat(amountEl.value) || 0
@@ -59,7 +68,8 @@ saveBtn.addEventListener("click", function(){
     if(expense && amount){
         const item = {
             name: expense,
-            value: parseFloat(amount)
+            value: parseFloat(amount),
+            date: formatted
         };
 
         expenseList.push(item)
