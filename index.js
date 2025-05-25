@@ -59,8 +59,6 @@ saveBtn.addEventListener("click", function(){
     const today = new Date();
     const formatted = today.toISOString().split('T')[0];
 
-    console.log(formatted)
-
     // Retrieve value
     let expense = expenseEl.value
     let amount = parseFloat(amountEl.value) || 0
@@ -85,10 +83,9 @@ saveBtn.addEventListener("click", function(){
     // Restart default background values
     expenseEl.value = ""
     amountEl.value = ""
-
-    console.log(expenseList)
   
 })
+
 
 
 
