@@ -18,7 +18,7 @@ Shopping Tracker is a lightweight Chrome extension designed to help you keep tra
 ## 📌 Why I Built This
 I created `Shopping Tracker` to solve a personal challenge — keeping up with the online spending habits of my shopaholic husband! This tool helps bring transparency and awareness to online purchases, one tab at a time. 😊
 <p align="center">
-<img src="https://github.com/user-attachments/assets/6577d117-3562-427d-ad21-faecddfb15d5" alt="Screenshot" width="200"/>
+<img src="https://github.com/user-attachments/assets/1ab30b18-26ff-465a-9944-9c8d6a903b55" width="200"/>
 </p>
 
 
